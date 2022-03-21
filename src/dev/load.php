@@ -1,6 +1,6 @@
 <?php
 
-define('BASEDIR', dirname(__DIR__));
+define('BASEDIR', defined('BASE_PATH')?BASE_PATH:dirname(dirname(dirname(dirname(dirname(__FILE__))))));
 
 define('DEVPATH', dirname(__FILE__));
 require_once __DIR__.'/libs/Inflector.php';
