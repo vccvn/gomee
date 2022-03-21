@@ -487,8 +487,12 @@ function convert_json_to_php($json_path, $php_path){
 }
 
 
-function make($object, ...$params){
+function make($object = null, ...$params){
+    if($object == null){
+        die("Please select item to make (repository, model, controller, mask)");
+    }
     $p = get_args_params($params);
+
     if($object == 'modules' || $object == 'module'){
         make_modules($p['params'], ...$p['args']);
     }elseif(is_callable('make_'.$object)){
