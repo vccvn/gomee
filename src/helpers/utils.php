@@ -201,6 +201,41 @@ if (!function_exists('get_first_key_value')) {
     }
 }
 
+if (!function_exists('array_val_type')) {
+    /**
+     * kiểm tra danh sách giá trị có đúng kiểu hay ko
+     *
+     * @param array $array
+     * @param string $type
+     * @return bool
+     */
+    function array_val_type(array $array = [], string $type = 'any'): bool
+    {
+        $type = strtolower($type);
+        if($type == 'any' || $type == '*') return true;
+        if($type == 'string'){
+            foreach ($array as $key => $value) {
+                if(!is_string($value)) return false;
+            }
+        }
+        elseif($type == 'number'){
+            foreach ($array as $key => $value) {
+                if(!is_numeric($value)) return false;
+            }
+        }
+        elseif($type == 'bool' || $type == 'boolean'){
+            foreach ($array as $key => $value) {
+                if(!is_bool($value)) return false;
+            }
+        }
+        else{
+            foreach ($array as $key => $value) {
+                if(gettype($value) != $type) return false;
+            }
+        }
+        return true;
+    }
+}
 
 if (!function_exists('get_video_from_url')) {
     /**
