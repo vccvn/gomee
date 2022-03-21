@@ -189,7 +189,7 @@ if (!function_exists('get_first_key_value')) {
      * @param mixed $array
      * @return CrazyArr
      */
-    function get_first_key_value($array, $count = 0, $key, $default = null)
+    function get_first_key_value($array, $count = 0, $key = null, $default = null)
     {
         for ($j = 0; $j < $count; $j++) {
             $v = $array[$j]->{$key};
