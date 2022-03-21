@@ -1,0 +1,22 @@
+{
+    "name": "vccvn/gomee",
+    "description": "library for laravel",
+    "authors": [
+        {
+            "name": "Doan LN",
+            "email": "developer.vcc@gmail.com"
+        }
+    ],
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Gomee\\": "src/app/"
+        },
+        "files": ["src/helpers/utils.php"]
+    },
+    "require": {
+        "guzzlehttp/guzzle": "7.4.x-dev"
+    }
+}
